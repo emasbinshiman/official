@@ -19,7 +19,7 @@
             createIcons({ icons });
         });
     </script>
-
+    
     <!-- Firebase Integration for future use (placeholder/scaffolding) -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
@@ -168,8 +168,8 @@
             <div class="px-4 pt-4 pb-3 space-y-4">
                 <a href="#market" class="mobile-nav-link block text-2xl font-semibold text-gray-900 hover:text-yellow-600">Market</a>
                 <a href="#products" class="mobile-nav-link block text-2xl font-semibold text-gray-900 hover:text-yellow-600">Order</a>
-                <a href="#" class="mobile-nav-link block text-2xl font-semibold text-gray-900 hover:text-yellow-600">Rahnu</a>
-                <a href="#" class="mobile-nav-link block text-2xl font-semibold text-gray-900 hover:text-yellow-600">Learn</a>
+                <a href="#" class="mobile-nav-link block text-2xl font-semibold text-gray-900 hover:text-yellow-600">Review</a>
+                <a href="#" class="mobile-nav-link block text-2xl font-semibold text-gray-900 hover:text-yellow-600">Help</a>
             </div>
         </div>
     </nav>
@@ -202,9 +202,10 @@
         </section>
 
         <!-- Live Ticker Section -->
+        <centre>
         <section id="market" class="py-12 bg-gray-50 scroll-mt-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 text-center">
-               <h2 class="text-3xl font-bold tracking-tight text-gray-900">Today's Gold Market</h2>
+               <h2 class="text-3xl font-bold tracking-tight text-gray-900">Today's Gold Live Price</h2>
                <p class="text-sm text-gray-500 mt-2">Live chart data provided by TradingView. Spot price grounded by Google Search.</p>
             </div>
             
@@ -226,7 +227,7 @@
                         <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
                         {
                         "autosize": true,
-                        "symbol": "FX_IDC:XAUUSD",
+                        "symbol": "FX_IDC:XAUMYRG",
                         "interval": "D",
                         "timezone": "Asia/Kuala_Lumpur",
                         "theme": "light",
@@ -255,7 +256,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section></centre>
 
         <!-- Products Section -->
         <section id="products" class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:lg:px-8 scroll-mt-16">
