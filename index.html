@@ -11,13 +11,13 @@
     <!-- Chart.js for Live Gold Graph -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <!-- Google Fonts: Inter (Closest free web-font to Apple's San Francisco) -->
+    <!-- Google Fonts: Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <!-- Tailwind Configuration for Apple-like Aesthetics -->
+    <!-- Tailwind Configuration -->
     <script>
         tailwind.config = {
             theme: {
@@ -32,7 +32,7 @@
                             200: '#fde89b',
                             300: '#fcd56d',
                             400: '#fbbf46',
-                            500: '#f59e0b', // Base Gold
+                            500: '#f59e0b',
                             600: '#d97706',
                             700: '#b45309',
                             800: '#92400e',
@@ -40,7 +40,7 @@
                         },
                         dark: {
                             900: '#111111',
-                            800: '#1c1c1e', // Apple Dark Gray
+                            800: '#1c1c1e',
                         }
                     },
                     animation: {
@@ -59,41 +59,32 @@
     </script>
 
     <style>
-        /* Apple-style smooth scroll & base styles */
         body {
-            background-color: #f5f5f7; /* Apple light grey background */
+            background-color: #f5f5f7;
             color: #1d1d1f;
             -webkit-font-smoothing: antialiased;
         }
-
-        /* Glassmorphism Utilities */
         .glass {
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
-
         .glass-dark {
             background: rgba(28, 28, 30, 0.85);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
-
-        /* Scroll Animation Classes */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
         }
-        
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
         }
-
-        /* Hide Scrollbar for clean look */
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
@@ -107,7 +98,7 @@
 
     <!-- NAVIGATION -->
     <nav class="fixed w-full z-50 glass transition-all duration-300" id="navbar">
-        <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-10">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
@@ -149,7 +140,7 @@
             </div>
         </div>
         
-        <!-- Mobile Menu (Hidden) -->
+        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-xl border-t border-gray-100 absolute w-full">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
                 <a href="#market" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-50">Market</a>
@@ -161,7 +152,7 @@
 
     <!-- HERO SECTION -->
     <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-10 text-center relative z-10">
             <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold-50 border border-gold-200 text-gold-800 text-sm font-medium mb-8 reveal">
                 <i data-lucide="sparkles" class="w-4 h-4"></i> New Collection 2026
             </div>
@@ -171,7 +162,7 @@
             </h1>
             
             <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-500 reveal delay-200">
-                Real-time pricing. Premium savings security. 
+                Real-time inspired pricing. Premium savings security. 
             </p>
             
             <div class="mt-10 flex justify-center gap-4 reveal delay-300">
@@ -192,35 +183,37 @@
     </section>
 
     <!-- LIVE MARKET SECTION -->
-    <section id="market" class="py-20 bg-white">
-        <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="market" class="py-24 bg-white">
+        <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-10">
             <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,2fr)] gap-8 lg:gap-10 items-stretch">
                 
                 <!-- Price Card -->
-                <div class="lg:col-span-1 bg-gray-50 rounded-3xl p-8 border border-gray-100 shadow-sm reveal">
-                    <h2 class="text-2xl font-semibold text-gray-900 mb-2">Live Gold Rate</h2>
-                    <p class="text-sm text-gray-500 mb-6">Updates every 30 to 60 seconds • 24K 999.9</p>
-                    
-                    <div class="flex items-baseline gap-2 mb-2">
-                        <span class="text-sm text-gray-500 font-medium">MYR</span>
-                        <span id="current-price" class="text-5xl font-bold tracking-tighter text-gray-900">605.00</span>
-                        <span class="text-lg text-gray-400">/g</span>
+                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100 shadow-sm reveal flex flex-col justify-between">
+                    <div>
+                        <h2 class="text-2xl font-semibold text-gray-900 mb-2">Live Gold Rate</h2>
+                        <p class="text-sm text-gray-500 mb-6">Simulated every 30–60 seconds • 24K 999.9 • MYR/gram</p>
+                        
+                        <div class="flex items-baseline gap-2 mb-2">
+                            <span class="text-sm text-gray-500 font-medium">MYR</span>
+                            <span id="current-price" class="text-5xl font-bold tracking-tighter text-gray-900">365.40</span>
+                            <span class="text-lg text-gray-400">/g</span>
+                        </div>
+
+                        <div id="price-change-container" class="flex items-center gap-2 text-green-600 font-medium mb-8">
+                            <i id="trend-icon" data-lucide="trending-up" class="w-5 h-5"></i>
+                            <span id="price-change">+0.00%</span>
+                            <span class="text-gray-400 text-sm font-normal">Today</span>
+                        </div>
                     </div>
 
-                    <div id="price-change-container" class="flex items-center gap-2 text-green-600 font-medium mb-8">
-                        <i id="trend-icon" data-lucide="trending-up" class="w-5 h-5"></i>
-                        <span id="price-change">+0.45%</span>
-                        <span class="text-gray-400 text-sm font-normal">Today</span>
-                    </div>
-
-                    <div class="space-y-4">
+                    <div class="space-y-4 mt-4">
                         <div class="flex justify-between text-sm py-3 border-b border-gray-200">
-                            <span class="text-gray-500">Bid (Buy)</span>
-                            <span class="font-medium" id="bid-price">539</span>
+                            <span class="text-gray-500">Bid (Buyback)</span>
+                            <span class="font-medium" id="bid-price">358.09</span>
                         </div>
                         <div class="flex justify-between text-sm py-3 border-b border-gray-200">
                             <span class="text-gray-500">Ask (Sell)</span>
-                            <span class="font-medium" id="ask-price">595</span>
+                            <span class="font-medium" id="ask-price">372.01</span>
                         </div>
                         <div class="flex justify-between text-sm py-3">
                             <span class="text-gray-500">Market Status</span>
@@ -231,30 +224,17 @@
                     </div>
                 </div>
 
-                <!-- Price Card -->
-<div class="bg-gray-50 rounded-3xl p-8 border border-gray-100 shadow-sm reveal flex flex-col justify-between">
-  ...
-</div>
-
                 <!-- Chart -->
-<div class="bg-white rounded-3xl p-6 border border-gray-200 shadow-lg reveal delay-100 flex flex-col">
-  ...
-  <div class="relative h-64 w-full lg:h-72">
-    <canvas id="goldChart"></canvas>
-  </div>
-</div>
-
-                <!-- Chart -->
-                <div class="lg:col-span-2 bg-white rounded-3xl p-6 border border-gray-200 shadow-lg reveal delay-100">
+                <div class="bg-white rounded-3xl p-6 border border-gray-200 shadow-lg reveal delay-100 flex flex-col">
                     <div class="flex justify-between items-center mb-4">
-                        <h3 class="font-medium text-gray-900">Spot Price Performance (1H)</h3>
+                        <h3 class="font-medium text-gray-900">Spot Price Performance (Simulated 1H)</h3>
                         <div class="flex gap-2">
                             <button class="px-3 py-1 text-xs font-medium bg-gray-900 text-white rounded-full">1H</button>
                             <button class="px-3 py-1 text-xs font-medium text-gray-500 hover:bg-gray-100 rounded-full">24H</button>
                             <button class="px-3 py-1 text-xs font-medium text-gray-500 hover:bg-gray-100 rounded-full">1W</button>
                         </div>
                     </div>
-                    <div class="relative h-64 w-full">
+                    <div class="relative h-64 w-full lg:h-72">
                         <canvas id="goldChart"></canvas>
                     </div>
                 </div>
@@ -262,9 +242,9 @@
         </div>
     </section>
 
-    <!-- PRODUCT COLLECTION (Grid Layout) -->
+    <!-- PRODUCT COLLECTION -->
     <section id="collection" class="py-24 bg-gray-50">
-        <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-10">
             <div class="flex justify-between items-end mb-12 reveal">
                 <div>
                     <h2 class="text-3xl font-bold text-gray-900">Latest Arrivals</h2>
@@ -275,20 +255,20 @@
                 </a>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="product-grid">
-                <!-- Products will be injected here by JS -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8" id="product-grid">
+                <!-- Products injected by JS -->
             </div>
         </div>
     </section>
 
-    <!-- FEATURES (Bento Grid) -->
+    <!-- FEATURES -->
     <section id="investment" class="py-24 bg-white">
-        <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-10">
             <h2 class="text-3xl font-bold text-center text-gray-900 mb-16 reveal">Why Emas Binshiman?</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-3 grid-rows-2 gap-6 h-[800px] md:h-[600px]">
                 
-                <!-- Feature 1: Large Left -->
+                <!-- Feature 1 -->
                 <div class="md:col-span-2 md:row-span-2 relative group overflow-hidden rounded-3xl bg-gray-100 reveal">
                     <img src="https://images.unsplash.com/photo-1610375461246-83c4850ed143?q=80&w=2187&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Gold Bars">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-transparent"></div>
@@ -298,7 +278,7 @@
                     </div>
                 </div>
 
-                <!-- Feature 2: Top Right -->
+                <!-- Feature 2 -->
                 <div class="bg-gold-50 p-8 rounded-3xl flex flex-col justify-center reveal delay-100 border border-gold-100">
                     <div class="w-12 h-12 bg-gold-100 rounded-xl flex items-center justify-center mb-4 text-gold-600">
                         <i data-lucide="shield-check" class="w-6 h-6"></i>
@@ -307,7 +287,7 @@
                     <p class="text-sm text-gray-600">100% money back guarantee if lost in transit.</p>
                 </div>
 
-                <!-- Feature 3: Bottom Right -->
+                <!-- Feature 3 -->
                 <div class="bg-gray-900 p-8 rounded-3xl flex flex-col justify-center text-white reveal delay-200">
                     <div class="w-12 h-12 bg-gray-800 rounded-xl flex items-center justify-center mb-4 text-white">
                         <i data-lucide="refresh-cw" class="w-6 h-6"></i>
@@ -322,7 +302,7 @@
 
     <!-- FOOTER -->
     <footer class="bg-white border-t border-gray-200 pt-16 pb-8">
-        <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-10">
             <div class="flex flex-col md:flex-row justify-between items-center mb-8">
                 <div class="flex items-center gap-2 mb-4 md:mb-0">
                     <div class="w-6 h-6 bg-gradient-to-br from-gold-300 to-gold-600 rounded flex items-center justify-center">
@@ -335,7 +315,7 @@
         </div>
     </footer>
 
-    <!-- CART MODAL (Slide Over) -->
+    <!-- CART MODAL -->
     <div id="cart-overlay" class="fixed inset-0 bg-black/30 backdrop-blur-sm z-50 hidden transition-opacity duration-300 opacity-0" onclick="toggleCart()"></div>
     
     <div id="cart-drawer" class="fixed top-0 right-0 h-full w-full sm:w-[400px] bg-white z-[60] transform translate-x-full transition-transform duration-300 shadow-2xl flex flex-col">
@@ -347,9 +327,8 @@
             </button>
         </div>
 
-        <!-- Cart Items Container -->
+        <!-- Cart Items -->
         <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-6">
-            <!-- Empty State (Default) -->
             <div class="flex flex-col items-center justify-center h-full text-center text-gray-500">
                 <i data-lucide="shopping-bag" class="w-12 h-12 mb-4 text-gray-300"></i>
                 <p>Your bag is empty.</p>
@@ -361,11 +340,17 @@
         <div class="p-6 bg-gray-50 border-t border-gray-100">
             <div class="flex justify-between mb-2">
                 <span class="text-gray-500">Subtotal (Based on Live Rate)</span>
-                <span class="font-bold text-gray-900" id="cart-total">RM 0.00</span>
+                <span class="font-semibold text-gray-900" id="cart-total">RM 0.00</span>
             </div>
             <p class="text-xs text-gray-400 mb-4">*Prices are locked for 5 minutes upon checkout.</p>
-            <button onclick="checkout()" class="w-full py-4 bg-gray-900 text-white rounded-xl font-bold hover:bg-black transition-colors flex items-center justify-center gap-2">
-                Secure Checkout <i data-lucide="lock" class="w-4 h-4"></i>
+            <button
+                type="button"
+                onclick="checkout()"
+                class="w-full py-4 bg-gray-900 text-white rounded-2xl font-semibold hover:bg-black transition-colors flex items-center justify-center gap-2 text-sm tracking-wide"
+                aria-label="Proceed to secure payment"
+            >
+                Secure Checkout
+                <i data-lucide="lock" class="w-4 h-4"></i>
             </button>
         </div>
     </div>
@@ -386,19 +371,20 @@
     </div>
 
     <script>
-        // --- GLOBAL STATE ---
-        let currentPrice = 365.40; // Base Price MYR
+        // --- GLOBAL STATE (SIMULATED LIVE PRICE) ---
+        let currentPrice = 365.40; // MYR per gram (simulated)
         let previousPrice = 365.00;
+        let basePrice = 365.00;    // "opening" price for % change
         let chartInstance = null;
         let cart = [];
         let marketInterval;
         
         // Products Database (Mock)
         const products = [
-            { id: 1, name: "1g - Perdana Menteri Edition (Goldbar)", weight: 1.00, type: "999", image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=600&q=80" },
-            { id: 2, name: "1/4 Dinar (1.06g)", weight: 1.06, type: "999", image: "https://images.unsplash.com/photo-1599643478518-17488fbbcd75?auto=format&fit=crop&w=600&q=80" },
-            { id: 3, name: "0.5g - Congratulations (Goldbar)", weight: 0.5, type: "999", image: "https://images.unsplash.com/photo-1610375461246-83c4850ed143?auto=format&fit=crop&w=600&q=80" },
-            { id: 4, name: "Love Ring", weight: 2.10, type: "999", image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=600&q=80" }
+            { id: 1, name: "Pulut Dakap Bracelet", weight: 5.25, type: "916", workmanship: 150, image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=600&q=80" },
+            { id: 2, name: "Sauh Necklace", weight: 12.50, type: "916", workmanship: 200, image: "https://images.unsplash.com/photo-1599643478518-17488fbbcd75?auto=format&fit=crop&w=600&q=80" },
+            { id: 3, name: "Classic Gold Bar", weight: 10.00, type: "999", workmanship: 50, image: "https://images.unsplash.com/photo-1610375461246-83c4850ed143?auto=format&fit=crop&w=600&q=80" },
+            { id: 4, name: "Love Ring", weight: 2.10, type: "916", workmanship: 80, image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=600&q=80" }
         ];
 
         // --- DOM ELEMENTS ---
@@ -417,28 +403,12 @@
             visitors: document.getElementById('live-visitors')
         };
 
-        <div class="p-6 bg-gray-50 border-t border-gray-100">
-  <div class="flex justify-between mb-2">
-    <span class="text-gray-500">Subtotal (Based on Live Rate)</span>
-    <span class="font-semibold text-gray-900" id="cart-total">RM 0.00</span>
-  </div>
-  <p class="text-xs text-gray-400 mb-4">*Prices are locked for 5 minutes upon checkout.</p>
-  <button
-    type="button"
-    onclick="checkout()"
-    class="w-full py-4 bg-gray-900 text-white rounded-2xl font-semibold hover:bg-black transition-colors flex items-center justify-center gap-2 text-sm tracking-wide"
-    aria-label="Proceed to secure payment"
-  >
-    Secure Checkout
-    <i data-lucide="lock" class="w-4 h-4"></i>
-  </button>
-</div>
-
         // --- INITIALIZATION ---
         document.addEventListener('DOMContentLoaded', () => {
             lucide.createIcons();
             initChart();
-            startMarketSimulator();
+            renderProducts();
+            startMarketSimulator();    // still simulated to keep everything client-side
             setupScrollAnimations();
             document.getElementById('year').textContent = new Date().getFullYear();
             
@@ -452,43 +422,37 @@
             setTimeout(showSocialProof, 5000);
         });
 
-        // --- MARKET SIMULATOR (Resolves API Issues) ---
+        // --- SIMULATED MARKET (CLIENT-ONLY) ---
         function startMarketSimulator() {
-            // Initial Render
             updateDashboard();
-            renderProducts();
-
-            // Update every 3 seconds
+            updateProductPrices();
+            updateCartTotal();
+            
             marketInterval = setInterval(() => {
-                // Fluctuate price by -0.50 to +0.80 cents
-                const volatility = (Math.random() * 1.3) - 0.5;
+                const volatility = (Math.random() * 1.3) - 0.5; // -0.5 to +0.8
                 previousPrice = currentPrice;
                 currentPrice += volatility;
 
                 updateDashboard();
                 updateChart(currentPrice);
-                
-                // Only re-render price tags, not whole products to save DOM stress
                 updateProductPrices();
                 updateCartTotal();
             }, 3000);
         }
 
         function updateDashboard() {
-            // Formatting
             const fmt = (n) => n.toFixed(2);
             
             els.price.textContent = fmt(currentPrice);
             
-            // Spread Calculation (Bid is lower, Ask is higher)
-            els.bid.textContent = fmt(currentPrice * 0.96); // Dealer buys back lower
-            els.ask.textContent = fmt(currentPrice * 1.04); // Dealer sells higher
+            // Bid/Ask around current price
+            els.bid.textContent = fmt(currentPrice * 0.98);
+            els.ask.textContent = fmt(currentPrice * 1.02);
 
-            // Calculate change percentage relative to base (365)
-            const change = ((currentPrice - 365) / 365) * 100;
+            const referencePrice = basePrice || currentPrice || 1;
+            const change = ((currentPrice - referencePrice) / referencePrice) * 100;
             els.change.textContent = `${change > 0 ? '+' : ''}${fmt(change)}%`;
             
-            // Color Logic
             const trendContainer = document.getElementById('price-change-container');
             if(change >= 0) {
                 trendContainer.className = "flex items-center gap-2 text-green-600 font-medium mb-8";
@@ -504,17 +468,15 @@
         function initChart() {
             const ctx = document.getElementById('goldChart').getContext('2d');
             
-            // Generate initial data history
-            const initialData = Array(20).fill(0).map((_, i) => 365 + (Math.random() * 2));
+            const initialData = Array(20).fill(0).map(() => basePrice + (Math.random() * 2 - 1));
             const labels = Array(20).fill(0).map((_, i) => {
                 const d = new Date();
                 d.setMinutes(d.getMinutes() - (20 - i));
                 return d.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
             });
 
-            // Gradient Fill
             const gradient = ctx.createLinearGradient(0, 0, 0, 400);
-            gradient.addColorStop(0, 'rgba(245, 158, 11, 0.2)'); // Gold color
+            gradient.addColorStop(0, 'rgba(245, 158, 11, 0.2)');
             gradient.addColorStop(1, 'rgba(245, 158, 11, 0)');
 
             chartInstance = new Chart(ctx, {
@@ -530,7 +492,7 @@
                         pointRadius: 0,
                         pointHoverRadius: 4,
                         fill: true,
-                        tension: 0.4 // Smooth curves
+                        tension: 0.4
                     }]
                 },
                 options: {
@@ -572,15 +534,13 @@
         function updateChart(price) {
             const now = new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
             
-            // Remove oldest
             chartInstance.data.labels.shift();
             chartInstance.data.datasets[0].data.shift();
             
-            // Add newest
             chartInstance.data.labels.push(now);
             chartInstance.data.datasets[0].data.push(price);
             
-            chartInstance.update('none'); // 'none' mode for smooth animation
+            chartInstance.update('none');
         }
 
         // --- PRODUCT RENDERING ---
@@ -588,24 +548,24 @@
             els.productGrid.innerHTML = products.map(p => {
                 const estimatedPrice = (p.weight * currentPrice) + p.workmanship;
                 return `
-                <div class="group bg-white rounded-2xl p-4 transition-all duration-300 hover:shadow-xl border border-gray-100 reveal">
-                    <div class="relative w-full aspect-square rounded-xl overflow-hidden mb-4 bg-gray-100">
+                <div class="group bg-white rounded-3xl p-5 lg:p-6 transition-all duration-300 hover:shadow-2xl border border-gray-100 reveal h-full flex flex-col">
+                    <div class="relative w-full aspect-[4/5] rounded-2xl overflow-hidden mb-4 bg-gray-100">
                         <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                        <div class="absolute top-2 right-2 bg-white/90 backdrop-blur px-2 py-1 rounded text-xs font-bold text-gold-700">
+                        <div class="absolute top-2 right-2 bg-white/90 backdrop-blur px-2 py-1 rounded-full text-xs font-semibold text-gold-700">
                             ${p.type}
                         </div>
                     </div>
-                    <div>
-                        <h3 class="font-semibold text-gray-900 mb-1">${p.name}</h3>
-                        <div class="flex justify-between items-center text-sm text-gray-500 mb-3">
+                    <div class="flex-1 flex flex-col">
+                        <h3 class="font-semibold text-gray-900 mb-1 text-sm lg:text-base">${p.name}</h3>
+                        <div class="flex justify-between items-center text-xs lg:text-sm text-gray-500 mb-3">
                             <span>${p.weight.toFixed(2)}g</span>
                             <span>Fee: RM${p.workmanship}</span>
                         </div>
-                        <div class="flex justify-between items-center mt-2">
-                            <div class="text-lg font-bold text-gray-900 product-price-tag" data-weight="${p.weight}" data-fee="${p.workmanship}">
+                        <div class="mt-auto flex justify-between items-center pt-2">
+                            <div class="text-base lg:text-lg font-semibold text-gray-900 product-price-tag" data-weight="${p.weight}" data-fee="${p.workmanship}">
                                 RM ${estimatedPrice.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}
                             </div>
-                            <button onclick="addToCart(${p.id})" class="p-2 bg-gray-900 text-white rounded-full hover:bg-gold-600 transition-colors">
+                            <button onclick="addToCart(${p.id})" class="p-2.5 bg-gray-900 text-white rounded-full hover:bg-gold-600 transition-colors">
                                 <i data-lucide="plus" class="w-4 h-4"></i>
                             </button>
                         </div>
@@ -614,8 +574,6 @@
                 `;
             }).join('');
             lucide.createIcons();
-            
-            // Re-trigger reveal animation for new items
             setupScrollAnimations();
         }
 
@@ -631,14 +589,9 @@
         // --- CART SYSTEM ---
         function addToCart(id) {
             const product = products.find(p => p.id === id);
-            
-            // Add a temporary "base_price_at_add" but recalculate live
             cart.push({ ...product, addedAt: Date.now() });
-            
             updateCartCount();
             updateCartUI();
-            
-            // Show cart automatically
             if(els.cartOverlay.classList.contains('hidden')) {
                 toggleCart();
             }
@@ -664,6 +617,7 @@
                         <button onclick="toggleCart(); window.location.href='#collection'" class="mt-4 text-gold-600 font-medium hover:underline">Start Shopping</button>
                     </div>`;
                 els.cartTotal.textContent = "RM 0.00";
+                lucide.createIcons();
             } else {
                 els.cartItems.innerHTML = cart.map((item, index) => {
                     const price = (item.weight * currentPrice) + item.workmanship;
@@ -689,7 +643,10 @@
         }
 
         function updateCartTotal() {
-            if (cart.length === 0) return;
+            if (cart.length === 0) {
+                els.cartTotal.textContent = "RM 0.00";
+                return;
+            }
             const total = cart.reduce((sum, item) => sum + ((item.weight * currentPrice) + item.workmanship), 0);
             els.cartTotal.textContent = `RM ${total.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
         }
@@ -699,84 +656,33 @@
             const drawer = els.cartDrawer;
             
             if (overlay.classList.contains('hidden')) {
-                // Open
                 overlay.classList.remove('hidden');
                 setTimeout(() => overlay.classList.remove('opacity-0'), 10);
                 drawer.classList.remove('translate-x-full');
             } else {
-                // Close
                 overlay.classList.add('opacity-0');
                 drawer.classList.add('translate-x-full');
                 setTimeout(() => overlay.classList.add('hidden'), 300);
             }
         }
 
-        // --- CHECKOUT: SEND CART TO PAYMENT GATEWAY ---
-async function checkout() {
-    if (cart.length === 0) {
-        return;
-    }
+        // --- CHECKOUT: FRONT-END REDIRECT TO PAYMENT GATEWAY (PLACEHOLDER) ---
+        function checkout() {
+            if (cart.length === 0) return;
 
-    // Build payload to send to backend
-    const items = cart.map(item => ({
-        id: item.id,
-        name: item.name,
-        weight: item.weight,
-        type: item.type,
-        workmanship: item.workmanship,
-        pricePerGram: currentPrice,
-        quantity: 1 // you can extend this later
-    }));
+            const total = cart.reduce((sum, item) => sum + ((item.weight * currentPrice) + item.workmanship), 0);
+            const roundedTotal = total.toFixed(2);
 
-    try {
-        const response = await fetch('/api/create-checkout-session', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ items })
-        });
+            // Placeholder payment URL – replace with your real gateway URL
+            const paymentUrl = `https://your-payment-gateway.com/checkout?amount=${encodeURIComponent(roundedTotal)}&currency=MYR&description=${encodeURIComponent('Emas Binshiman Order')}`;
 
-        if (!response.ok) {
-            throw new Error('Failed to create checkout session');
-        }
-
-        const data = await response.json();
-
-        if (!data.url) {
-            throw new Error('No checkout URL returned from server');
-        }
-
-        // Redirect to payment page (Stripe Checkout, ToyyibPay hosted page, etc.)
-        window.location.href = data.url;
-    } catch (error) {
-        console.error('Checkout error:', error);
-        alert('Sorry, we could not start the payment. Please try again in a moment.');
-    }
-} {
-            if(cart.length === 0) return;
-            
-            // SALES CONVERSION OPTIMIZATION:
-            // Send directly to WhatsApp for closing the deal personally.
-            
-            let message = `Hello Emas Binshiman, I would like to secure these items at current market rate (approx RM ${currentPrice.toFixed(2)}/g):%0A%0A`;
-            let total = 0;
-            
-            cart.forEach(item => {
-                const p = (item.weight * currentPrice) + item.workmanship;
-                total += p;
-                message += `- ${item.name} (${item.weight}g): RM ${p.toFixed(2)}%0A`;
-            });
-            
-            message += `%0A*Total Estimate: RM ${total.toFixed(2)}*`;
-            
-            // Open WhatsApp
-            window.open(`https://wa.me/60123456789?text=${message}`, '_blank');
+            // Optional: confirm then redirect
+            if (confirm(`You will be redirected to a secure payment page.\n\nOrder total: RM ${roundedTotal}\n\nContinue?`)) {
+                window.location.href = paymentUrl;
+            }
         }
 
         // --- UX ENHANCEMENTS ---
-
-        // Social Proof Popup logic
         function showSocialProof() {
             const names = ["Sarah", "Ahmad", "Mei Ling", "Raj", "Jessica"];
             const items = ["Gold Ring", "Necklace", "10g Bar", "Bangle"];
@@ -785,23 +691,18 @@ async function checkout() {
             const nameEl = document.getElementById('fomo-name');
             const productEl = document.getElementById('fomo-product');
             
-            // Randomize
             nameEl.textContent = names[Math.floor(Math.random() * names.length)];
             productEl.textContent = items[Math.floor(Math.random() * items.length)];
             
-            // Show
             popup.classList.remove('translate-y-32');
             
-            // Hide after 4 seconds
             setTimeout(() => {
                 popup.classList.add('translate-y-32');
             }, 4000);
             
-            // Reschedule
-            setTimeout(showSocialProof, Math.random() * 20000 + 10000); // Random time between 10s and 30s
+            setTimeout(showSocialProof, Math.random() * 20000 + 10000);
         }
 
-        // Scroll Reveal Animation
         function setupScrollAnimations() {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -819,7 +720,7 @@ async function checkout() {
             document.getElementById('mobile-menu').classList.toggle('hidden');
         });
 
-        // Sticky Nav Blur Effect on Scroll
+        // Sticky Nav Shadow
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar');
             if (window.scrollY > 20) {
@@ -832,4 +733,3 @@ async function checkout() {
     </script>
 </body>
 </html>
-
