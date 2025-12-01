@@ -107,7 +107,7 @@
 
     <!-- NAVIGATION -->
     <nav class="fixed w-full z-50 glass transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
@@ -161,7 +161,7 @@
 
     <!-- HERO SECTION -->
     <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gold-50 border border-gold-200 text-gold-800 text-sm font-medium mb-8 reveal">
                 <i data-lucide="sparkles" class="w-4 h-4"></i> New Collection 2026
             </div>
@@ -193,8 +193,8 @@
 
     <!-- LIVE MARKET SECTION -->
     <section id="market" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,2fr)] gap-8 lg:gap-10 items-stretch">
                 
                 <!-- Price Card -->
                 <div class="lg:col-span-1 bg-gray-50 rounded-3xl p-8 border border-gray-100 shadow-sm reveal">
@@ -231,6 +231,19 @@
                     </div>
                 </div>
 
+                <!-- Price Card -->
+<div class="bg-gray-50 rounded-3xl p-8 border border-gray-100 shadow-sm reveal flex flex-col justify-between">
+  ...
+</div>
+
+                <!-- Chart -->
+<div class="bg-white rounded-3xl p-6 border border-gray-200 shadow-lg reveal delay-100 flex flex-col">
+  ...
+  <div class="relative h-64 w-full lg:h-72">
+    <canvas id="goldChart"></canvas>
+  </div>
+</div>
+
                 <!-- Chart -->
                 <div class="lg:col-span-2 bg-white rounded-3xl p-6 border border-gray-200 shadow-lg reveal delay-100">
                     <div class="flex justify-between items-center mb-4">
@@ -251,7 +264,7 @@
 
     <!-- PRODUCT COLLECTION (Grid Layout) -->
     <section id="collection" class="py-24 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-end mb-12 reveal">
                 <div>
                     <h2 class="text-3xl font-bold text-gray-900">Latest Arrivals</h2>
@@ -270,7 +283,7 @@
 
     <!-- FEATURES (Bento Grid) -->
     <section id="investment" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-center text-gray-900 mb-16 reveal">Why Emas Binshiman?</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-3 grid-rows-2 gap-6 h-[800px] md:h-[600px]">
@@ -309,7 +322,7 @@
 
     <!-- FOOTER -->
     <footer class="bg-white border-t border-gray-200 pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center mb-8">
                 <div class="flex items-center gap-2 mb-4 md:mb-0">
                     <div class="w-6 h-6 bg-gradient-to-br from-gold-300 to-gold-600 rounded flex items-center justify-center">
@@ -382,10 +395,10 @@
         
         // Products Database (Mock)
         const products = [
-            { id: 1, name: "Pulut Dakap Bracelet", weight: 5.25, type: "916", workmanship: 150, image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=600&q=80" },
-            { id: 2, name: "Sauh Necklace", weight: 12.50, type: "916", workmanship: 200, image: "https://images.unsplash.com/photo-1599643478518-17488fbbcd75?auto=format&fit=crop&w=600&q=80" },
-            { id: 3, name: "Classic Gold Bar", weight: 10.00, type: "999", workmanship: 50, image: "https://images.unsplash.com/photo-1610375461246-83c4850ed143?auto=format&fit=crop&w=600&q=80" },
-            { id: 4, name: "Love Ring", weight: 2.10, type: "916", workmanship: 80, image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=600&q=80" }
+            { id: 1, name: "1g - Perdana Menteri Edition (Goldbar)", weight: 1.00, type: "999", image: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=600&q=80" },
+            { id: 2, name: "1/4 Dinar (1.06g)", weight: 1.06, type: "999", image: "https://images.unsplash.com/photo-1599643478518-17488fbbcd75?auto=format&fit=crop&w=600&q=80" },
+            { id: 3, name: "0.5g - Congratulations (Goldbar)", weight: 0.5, type: "999", image: "https://images.unsplash.com/photo-1610375461246-83c4850ed143?auto=format&fit=crop&w=600&q=80" },
+            { id: 4, name: "Love Ring", weight: 2.10, type: "999", image: "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=600&q=80" }
         ];
 
         // --- DOM ELEMENTS ---
@@ -403,6 +416,23 @@
             cartTotal: document.getElementById('cart-total'),
             visitors: document.getElementById('live-visitors')
         };
+
+        <div class="p-6 bg-gray-50 border-t border-gray-100">
+  <div class="flex justify-between mb-2">
+    <span class="text-gray-500">Subtotal (Based on Live Rate)</span>
+    <span class="font-semibold text-gray-900" id="cart-total">RM 0.00</span>
+  </div>
+  <p class="text-xs text-gray-400 mb-4">*Prices are locked for 5 minutes upon checkout.</p>
+  <button
+    type="button"
+    onclick="checkout()"
+    class="w-full py-4 bg-gray-900 text-white rounded-2xl font-semibold hover:bg-black transition-colors flex items-center justify-center gap-2 text-sm tracking-wide"
+    aria-label="Proceed to secure payment"
+  >
+    Secure Checkout
+    <i data-lucide="lock" class="w-4 h-4"></i>
+  </button>
+</div>
 
         // --- INITIALIZATION ---
         document.addEventListener('DOMContentLoaded', () => {
@@ -681,7 +711,49 @@
             }
         }
 
-        function checkout() {
+        // --- CHECKOUT: SEND CART TO PAYMENT GATEWAY ---
+async function checkout() {
+    if (cart.length === 0) {
+        return;
+    }
+
+    // Build payload to send to backend
+    const items = cart.map(item => ({
+        id: item.id,
+        name: item.name,
+        weight: item.weight,
+        type: item.type,
+        workmanship: item.workmanship,
+        pricePerGram: currentPrice,
+        quantity: 1 // you can extend this later
+    }));
+
+    try {
+        const response = await fetch('/api/create-checkout-session', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ items })
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to create checkout session');
+        }
+
+        const data = await response.json();
+
+        if (!data.url) {
+            throw new Error('No checkout URL returned from server');
+        }
+
+        // Redirect to payment page (Stripe Checkout, ToyyibPay hosted page, etc.)
+        window.location.href = data.url;
+    } catch (error) {
+        console.error('Checkout error:', error);
+        alert('Sorry, we could not start the payment. Please try again in a moment.');
+    }
+} {
             if(cart.length === 0) return;
             
             // SALES CONVERSION OPTIMIZATION:
@@ -760,3 +832,4 @@
     </script>
 </body>
 </html>
+
